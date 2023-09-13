@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.Timer;
 public class Semaforo_GUI extends javax.swing.JFrame 
 {
-    int i=0,x=0,z=0,tiempo_Rojo=10,tiempo_Verde=5,tiempo_Amarillo=3,Y=0,CicloTotal=0;
+    int i=0,x=0,z=0,tiempo_Rojo=25,tiempo_Verde=20,tiempo_Amarillo=3,Y=0,Z=0,CicloTotal=0,Rojo_tmp=tiempo_Rojo,Verde_tmp=tiempo_Verde;
     ImageIcon[] Sprite=new ImageIcon[8];
     ImageIcon[] Ssemaforo=new ImageIcon[6];
     public Semaforo_GUI() 
@@ -187,7 +187,7 @@ public class Semaforo_GUI extends javax.swing.JFrame
         if(Y!=1)
         {
             Y++;
-            tiempo_Rojo = tiempo_Rojo+5;
+            Rojo_tmp = tiempo_Rojo+5;
             Titulo_Paso.setText(Titulo_Paso.getText()+" (+00:05)");
         }
     }//GEN-LAST:event_Bot_PasoActionPerformed
@@ -197,7 +197,7 @@ public class Semaforo_GUI extends javax.swing.JFrame
     }//GEN-LAST:event_Tex_RojoActionPerformed
 
     private void Slider_TraficoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Slider_TraficoStateChanged
-        Timer slider = new Timer(1000,new ActionListener()
+       /* Timer slider = new Timer(1000,new ActionListener()
         {
             public void actionPerformed(ActionEvent e)
             {  
@@ -209,7 +209,9 @@ public class Semaforo_GUI extends javax.swing.JFrame
                 }
             }
         });
-        slider.start();
+        slider.start();*/
+        Rojo_tmp=tiempo_Rojo-Slider_Trafico.getValue(); 
+        Verde_tmp=tiempo_Verde+Slider_Trafico.getValue();
     }//GEN-LAST:event_Slider_TraficoStateChanged
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bot_Paso;
@@ -242,7 +244,7 @@ public class Semaforo_GUI extends javax.swing.JFrame
             if(x<=CicloTotal)
             {
                 peatonEspera.stop();
-                if(x<=tiempo_Rojo)
+                if(x<=Rojo_tmp)
                 {
                     //SEMAFORO EN ROJO
                     k=0;
@@ -250,10 +252,10 @@ public class Semaforo_GUI extends javax.swing.JFrame
                     Luz_Amarilla.setIcon(Ssemaforo[2]);
                     Luz_Verde.setIcon(Ssemaforo[4]);
                     peatonMovimiento.start();
-                    Tex_Rojo.setText(String.valueOf("00:"+(tiempo_Rojo-l)));
+                    Tex_Rojo.setText(String.valueOf("00:"+(Rojo_tmp-l)));
                     l++;
                 }
-                if(x>tiempo_Rojo&&x<=tiempo_Rojo+tiempo_Amarillo)
+                if(x>Rojo_tmp&&x<=tiempo_Rojo+tiempo_Amarillo)
                 {
                     //SEMAFORO EN AMARILLO
                     l=0;
@@ -263,7 +265,7 @@ public class Semaforo_GUI extends javax.swing.JFrame
                     Tex_Amarillo.setText(String.valueOf("00:0"+(tiempo_Amarillo-j)));
                     j++;
                 }
-                if(x>tiempo_Rojo+tiempo_Amarillo)
+                if(x>Rojo_tmp+tiempo_Amarillo)
                 {
                     //SEMAFORO EN VERDE
                     j=0;
@@ -272,7 +274,7 @@ public class Semaforo_GUI extends javax.swing.JFrame
                     Luz_Verde.setIcon(Ssemaforo[5]);
                     peatonMovimiento.stop();
                     peatonEspera.start();
-                    Tex_Verde.setText(String.valueOf("00:"+(tiempo_Verde-k)));
+                    Tex_Verde.setText(String.valueOf("00:"+(Verde_tmp-k)));
                     k++;
                 }       
             }
@@ -280,6 +282,7 @@ public class Semaforo_GUI extends javax.swing.JFrame
             {
                 x=0;
                 Y=0;
+                Z=0;
             }
             x++;
         }   
