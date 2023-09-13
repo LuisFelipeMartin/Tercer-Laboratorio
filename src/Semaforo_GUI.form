@@ -61,7 +61,7 @@
                               <Component id="Tex_Verde" min="-2" pref="50" max="-2" attributes="0"/>
                               <Component id="Luz_Verde" alignment="0" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <EmptySpace min="0" pref="45" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
@@ -83,7 +83,7 @@
                   <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
               </Group>
               <Group type="102" alignment="1" attributes="0">
-                  <EmptySpace max="32767" attributes="0"/>
+                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
               </Group>
@@ -93,7 +93,7 @@
           <Group type="103" groupAlignment="0" attributes="0">
               <Group type="102" alignment="0" attributes="0">
                   <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
-                  <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
+                  <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="Luz_Amarilla" min="-2" max="-2" attributes="0"/>
                       <Component id="Luz_Verde" min="-2" max="-2" attributes="0"/>
@@ -143,14 +143,14 @@
         <Component class="javax.swing.JLabel" name="Luz_Amarilla">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Desktop\Luz amarilla apagada.png"/>
+              <Image iconType="2" name="C:\Users\USUARIO\Desktop\Universidad\2023 - 2 + Laboratorio de programacion 3 + Mec lab 3\Trabajos\Segundo corte\2023 - 2 + Informe 03 + Semaforo\Luz amarilla apagada.png"/>
             </Property>
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="Luz_Roja">
           <Properties>
             <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-              <Image iconType="2" name="C:\Users\USUARIO\Desktop\Luz roja apagada.png"/>
+              <Image iconType="2" name="C:\Users\USUARIO\Desktop\Universidad\2023 - 2 + Laboratorio de programacion 3 + Mec lab 3\Trabajos\Segundo corte\2023 - 2 + Informe 03 + Semaforo\Luz roja apagada.png"/>
             </Property>
           </Properties>
         </Component>
@@ -171,7 +171,20 @@
             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
               <Color blue="33" green="33" red="33" type="rgb"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="ff" green="ff" red="ff" type="rgb"/>
+            </Property>
+            <Property name="majorTickSpacing" type="int" value="2"/>
+            <Property name="maximum" type="int" value="10"/>
+            <Property name="minorTickSpacing" type="int" value="1"/>
+            <Property name="paintLabels" type="boolean" value="true"/>
+            <Property name="paintTicks" type="boolean" value="true"/>
+            <Property name="toolTipText" type="java.lang.String" value=""/>
+            <Property name="value" type="int" value="0"/>
           </Properties>
+          <Events>
+            <EventHandler event="stateChanged" listener="javax.swing.event.ChangeListener" parameters="javax.swing.event.ChangeEvent" handler="Slider_TraficoStateChanged"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JButton" name="Bot_Paso">
           <Properties>
@@ -248,9 +261,6 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel2"/>
-          </Properties>
         </Component>
       </SubComponents>
     </Container>
