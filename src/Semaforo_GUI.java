@@ -197,19 +197,6 @@ public class Semaforo_GUI extends javax.swing.JFrame
     }//GEN-LAST:event_Tex_RojoActionPerformed
 
     private void Slider_TraficoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_Slider_TraficoStateChanged
-       /* Timer slider = new Timer(1000,new ActionListener()
-        {
-            public void actionPerformed(ActionEvent e)
-            {  
-                if(z<Slider_Trafico.getValue())
-                {
-                    tiempo_Rojo--; 
-                    tiempo_Verde++;
-                    z++;
-                }
-            }
-        });
-        slider.start();*/
         Rojo_tmp=tiempo_Rojo-Slider_Trafico.getValue(); 
         Verde_tmp=tiempo_Verde+Slider_Trafico.getValue();
     }//GEN-LAST:event_Slider_TraficoStateChanged
