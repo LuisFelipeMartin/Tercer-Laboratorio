@@ -243,6 +243,9 @@
               <Border info="null"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Tex_AmarilloActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JTextField" name="Tex_Verde">
           <Properties>
@@ -261,6 +264,11 @@
           </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel2">
+          <Properties>
+            <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
+              <Image iconType="2" name="C:\Users\USUARIO\Desktop\Universidad\2023 - 2 + Laboratorio de programacion 3 + Mec lab 3\Trabajos\Segundo corte\2023 - 2 + Informe 03 + Semaforo\Caminar_1.png"/>
+            </Property>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

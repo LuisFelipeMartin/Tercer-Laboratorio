@@ -4,7 +4,7 @@ import javax.swing.ImageIcon;
 import javax.swing.Timer;
 public class Semaforo_GUI extends javax.swing.JFrame 
 {
-    int i=0,x=0,z=0,tiempo_Rojo=25,tiempo_Verde=20,tiempo_Amarillo=3,Y=0,Z=0,CicloTotal=0,Rojo_tmp=tiempo_Rojo,Verde_tmp=tiempo_Verde;
+    int i=0,x=0,Y=0,j=0,k=0,l=0,tiempo_Rojo=25,tiempo_Verde=20,tiempo_Amarillo=3,CicloTotal=0,Rojo_tmp=tiempo_Rojo,Verde_tmp=tiempo_Verde;
     ImageIcon[] Sprite=new ImageIcon[8];
     ImageIcon[] Ssemaforo=new ImageIcon[6];
     public Semaforo_GUI() 
@@ -104,6 +104,11 @@ public class Semaforo_GUI extends javax.swing.JFrame
         Tex_Amarillo.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Tex_Amarillo.setText("00:00");
         Tex_Amarillo.setBorder(null);
+        Tex_Amarillo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Tex_AmarilloActionPerformed(evt);
+            }
+        });
 
         Tex_Verde.setEditable(false);
         Tex_Verde.setBackground(new java.awt.Color(51, 51, 51));
@@ -111,6 +116,8 @@ public class Semaforo_GUI extends javax.swing.JFrame
         Tex_Verde.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         Tex_Verde.setText("00:00");
         Tex_Verde.setBorder(null);
+
+        jLabel2.setIcon(new javax.swing.ImageIcon("C:\\Users\\USUARIO\\Desktop\\Universidad\\2023 - 2 + Laboratorio de programacion 3 + Mec lab 3\\Trabajos\\Segundo corte\\2023 - 2 + Informe 03 + Semaforo\\Caminar_1.png")); // NOI18N
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -200,6 +207,11 @@ public class Semaforo_GUI extends javax.swing.JFrame
         Rojo_tmp=tiempo_Rojo-Slider_Trafico.getValue(); 
         Verde_tmp=tiempo_Verde+Slider_Trafico.getValue();
     }//GEN-LAST:event_Slider_TraficoStateChanged
+
+    private void Tex_AmarilloActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tex_AmarilloActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Tex_AmarilloActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Bot_Paso;
     private javax.swing.JLabel Luz_Amarilla;
@@ -215,7 +227,6 @@ public class Semaforo_GUI extends javax.swing.JFrame
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
-    int j=0,k=0,l=0;
     Timer cicloTotal = new Timer(1000, new ActionListener()
     {
         public void actionPerformed(ActionEvent e) 
@@ -242,7 +253,7 @@ public class Semaforo_GUI extends javax.swing.JFrame
                     Tex_Rojo.setText(String.valueOf("00:"+(Rojo_tmp-l)));
                     l++;
                 }
-                if(x>Rojo_tmp&&x<=tiempo_Rojo+tiempo_Amarillo)
+                if(x>Rojo_tmp&&x<=Rojo_tmp+tiempo_Amarillo)
                 {
                     //SEMAFORO EN AMARILLO
                     l=0;
@@ -269,7 +280,6 @@ public class Semaforo_GUI extends javax.swing.JFrame
             {
                 x=0;
                 Y=0;
-                Z=0;
             }
             x++;
         }   
